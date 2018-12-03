@@ -54,8 +54,12 @@
 #endif
 
 #define COAP_DEFAULT_MAX_AGE                 60
+#ifndef COAP_RESPONSE_TIMEOUT
 #define COAP_RESPONSE_TIMEOUT                2
+#endif
+#ifndef COAP_MAX_RETRANSMIT
 #define COAP_MAX_RETRANSMIT                  4
+#endif
 #define COAP_ACK_RANDOM_FACTOR               1.5
 #define COAP_MAX_LATENCY                     100
 #define COAP_PROCESSING_DELAY                COAP_RESPONSE_TIMEOUT
