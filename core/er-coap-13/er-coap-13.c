@@ -48,7 +48,6 @@
 
 #include "../liblwm2m.h" /* for lwm2m_malloc() and lwm2m_free() */
 
-#define DEBUG 0
 #if DEBUG
 #include <stdio.h>
 #define PRINTF(...) printf(__VA_ARGS__)
@@ -619,7 +618,7 @@ coap_parse_message(void *packet, uint8_t *data, uint16_t data_len)
   uint8_t *current_option;
   unsigned int option_number = 0;
   unsigned int option_delta = 0;
-  size_t option_length = 0;
+  unsigned int option_length = 0;
   unsigned int *x;
 
   /* Initialize packet */
