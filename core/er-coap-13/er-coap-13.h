@@ -45,6 +45,55 @@
 #include <stdint.h>
 #include <stddef.h> /* for size_t */
 
+#define LWM2M_COAP (fn) fn_lwm2m
+
+#define coap_parse_message coap_parse_message_lwm2m
+#define coap_serialize_message coap_serialize_message_lwm2m
+#define coap_init_message coap_init_message_lwm2m
+#define coap_serialize_get_size coap_serialize_get_size_lwm2m
+#define coap_serialize_message coap_serialize_message_lwm2m
+#define coap_free_header coap_free_header_lwm2m
+#define coap_get_query_variable coap_get_query_variable_lwm2m
+#define coap_get_post_variable coap_get_post_variable_lwm2m
+#define coap_set_status_code coap_set_status_code_lwm2m
+#define coap_get_header_content_type coap_get_header_content_type_lwm2m
+#define coap_set_header_content_type coap_set_header_content_type_lwm2m
+#define coap_get_header_accept   coap_get_header_accept_lwm2m
+#define  coap_set_header_accept  coap_set_header_accept_lwm2m
+#define  coap_get_header_max_age  coap_get_header_max_age_lwm2m
+#define  coap_set_header_max_age  coap_set_header_max_age_lwm2m
+#define   coap_get_header_etag coap_get_header_etag_lwm2m
+#define   coap_set_header_etag coap_set_header_etag_lwm2m
+#define   coap_get_header_if_match coap_get_header_if_match_lwm2m
+#define   coap_set_header_if_match coap_set_header_if_match_lwm2m
+#define   coap_get_header_if_none_match coap_get_header_if_none_match_lwm2m
+#define   coap_set_header_if_none_match coap_set_header_if_none_match_lwm2m
+#define  coap_get_header_token  coap_get_header_token_lwm2m
+#define  coap_set_header_token  coap_set_header_token_lwm2m
+#define  coap_get_header_proxy_uri  coap_get_header_proxy_uri_lwm2m
+#define  coap_set_header_proxy_uri  coap_set_header_proxy_uri_lwm2m
+#define coap_get_header_uri_host   coap_get_header_uri_host_lwm2m
+#define   coap_set_header_uri_host coap_set_header_uri_host_lwm2m
+#define   coap_get_header_uri_path coap_get_header_uri_path_lwm2m
+#define   coap_set_header_uri_path coap_set_header_uri_path_lwm2m
+#define   coap_set_header_uri_path_segment coap_set_header_uri_path_segment_lwm2m
+#define   coap_get_header_uri_query coap_get_header_uri_query_lwm2m
+#define   coap_set_header_uri_query coap_set_header_uri_query_lwm2m
+#define  coap_get_header_location_path  coap_get_header_location_path_lwm2m
+#define  coap_set_header_location_path  coap_set_header_location_path_lwm2m
+#define  coap_get_header_location_query  coap_get_header_location_query_lwm2m
+#define  coap_set_header_location_query  coap_set_header_location_query_lwm2m
+#define  coap_get_header_observe  coap_get_header_observe_lwm2m
+#define  coap_set_header_observe  coap_set_header_observe_lwm2m
+#define  coap_get_header_block2  coap_get_header_block2_lwm2m
+#define  coap_set_header_block2  coap_set_header_block2_lwm2m
+#define  coap_get_header_block1  coap_get_header_block1_lwm2m
+#define  coap_set_header_block1  coap_set_header_block1_lwm2m
+#define  coap_get_header_size  coap_get_header_size_lwm2m
+#define  coap_set_header_size  coap_set_header_size_lwm2m
+#define  coap_get_payload  coap_get_payload_lwm2m
+#define  coap_set_payload  coap_set_payload_lwm2m
+
 /*
  * The maximum buffer size that is provided for resource responses and must be respected due to the limited IP buffer.
  * Larger data must be handled by the resource and will be sent chunk-wise through a TCP stream or CoAP blocks.
@@ -325,6 +374,9 @@ typedef struct {
 
 /* To store error code and human-readable payload */
 extern const char *coap_error_message;
+
+
+
 
 uint16_t coap_get_mid(void);
 
